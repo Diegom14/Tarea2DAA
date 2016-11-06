@@ -10,18 +10,18 @@ def table(m,n):
     # filas = m, columnas = n
     #Inicializa la matriz en ceros
     T = []
-    for i in range(len(n)):
+    for i in range(n):
         row = []
-        for j in range(len(m)):
+        for j in range(m):
             row.append(0)
         T.append(row)
     
 
     #Rellena la matriz
 
-    for i in range(len(n)):
-        for j in range(len(m)):
-            if i >= 1 or i!=len(m):
+    for i in range(n):
+        for j in range(m):
+            if i >= 1 or i!=m:
                 T[i,j] = min(T[i,j]+T[i-1,j+1],T[i,j]+T[i,j+1],T[i,j]+T[i+1,j+1])
 
             
@@ -29,7 +29,7 @@ def table(m,n):
                 T[i,j] = min(T[i,j]+T[i,j+1],T[i,j]+T[i+1,j+1])
                 
 
-            elif i == len(m):
+            elif i == m:
                 T[i,j] = min(T[i,j]+T[i-1,j+1],T[i,j]+T[i,j+1])
     solucion = find(T)
     return solucion
