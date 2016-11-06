@@ -15,7 +15,7 @@ def table(m,n):
         for j in range(len(m)):
             row.append(0)
         T.append(row)
-    return T
+    
 
     #Rellena la matriz
 
