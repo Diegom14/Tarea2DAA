@@ -32,7 +32,7 @@ def table(m,n):
             elif i == len(m):
                 T[i,j] = min(T[i,j]+T[i-1,j+1],T[i,j]+T[i,j+1])
     solucion = find(T)
-
+    return solucion
 #Crea un arreglo con los pixeles a eliminar
 def find(table):
     points = []
